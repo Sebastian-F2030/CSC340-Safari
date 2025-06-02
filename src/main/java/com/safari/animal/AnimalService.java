@@ -46,7 +46,7 @@ public class AnimalService {
    * @return List of Animals with the specified name
    */
   public Object getAnimalsByName(String name) {
-    return AnimalRepository.getAnimalsByName(name);
+    return AnimalRepository.findByNameContaining(name);
   }
 
   /**
@@ -55,8 +55,8 @@ public class AnimalService {
    * @param species The species to search for
    * @return List of Animals with the specified species
    */
-  public Object getAnimalsBySpecies(String species) {
-    return AnimalRepository.getAnimalsBySpecies(species);
+  public Object getAnimalsByCategory(String category) {
+    return AnimalRepository.getAnimalsByCategory(category);
   }
 
   /**

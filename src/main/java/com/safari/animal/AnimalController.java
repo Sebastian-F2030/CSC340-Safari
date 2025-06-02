@@ -51,10 +51,10 @@ public class AnimalController {
    * @param name The name of the Animal to search for
    * @return List of Animals with the specified name
    */
-  @GetMapping("/AnimalsByName/{key}")
-  public Object getAnimalsByName(@RequestParam String key) {
-    if (key != null) {
-      return AnimalService.getAnimalsByName(key);
+  @GetMapping("/Name/{name}")
+  public Object getAnimalsByName(@PathVariable String name) {
+    if (name != null) {
+      return AnimalService.getAnimalsByName(name);
     } else {
       return AnimalService.getAllAnimals();
     }
@@ -67,9 +67,9 @@ public class AnimalController {
    * @param species The species to search for
    * @return List of Animals with the specified species
    */
-  @GetMapping("/Animals/species/{species}")
-  public Object getAnimalsBySpecies(@PathVariable String species) {
-    return AnimalService.getAnimalsBySpecies(species);
+  @GetMapping("/Category/{category}")
+  public Object getAnimalsByCategory(@PathVariable String category){
+    return AnimalService.getAnimalsByCategory(category);
   }
 
   /**

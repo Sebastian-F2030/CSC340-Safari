@@ -17,23 +17,26 @@ public class Animal {
     private String description;
     private String species;
     private String location;
+    private String habitat;
 
     public Animal() {
     }
 
-    public Animal(Long animalid, String name, String description, String species, String location) {
+    public Animal(Long animalid, String name, String description, String species, String location, String habitat) {
         this.animalid = animalid;
         this.name = name;
         this.description = description;
         this.species = species;
         this.location = location;
+        this.habitat = habitat;
     }
 
-    public Animal( String name, String description, String species, String location) {
+    public Animal( String name, String description, String species, String location, String habitat) {
         this.name = name;
         this.description = description;
         this.species = species;
         this.location = location;
+        this.habitat = habitat;
     }
 
     public Long getAnimalId() {
@@ -76,6 +79,13 @@ public class Animal {
         this.location = location;
     }
 
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
 
 
 
