@@ -66,7 +66,7 @@ public class AnimalService {
    * @return the list of matching Animals
    */
   public Object getAnimalByHabitat(String habitat) {
-    return AnimalRepository.getAnimalByHabitat(habitat);
+    return AnimalRepository.findByHabitatContaining(habitat);
   }
 
     /**
@@ -76,7 +76,7 @@ public class AnimalService {
    * @return the list of matching Animals
    */
   public Object getAnimalBySpecies(String species) {
-    return AnimalRepository.getAnimalBySpecies(species);
+    return AnimalRepository.findBySpeciesContaining(species);
   }
 
     /**
@@ -86,7 +86,7 @@ public class AnimalService {
    * @return the list of matching Animals
    */
   public Object getAnimalByLocation(String location) {
-    return AnimalRepository.getAnimalByLocation(location);
+    return AnimalRepository.findByLocationContaining(location);
   }
 
   /**
