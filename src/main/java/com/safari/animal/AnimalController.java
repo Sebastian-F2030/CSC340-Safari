@@ -78,7 +78,7 @@ public class AnimalController {
    * @param String to match against location values
    * @return Returning any and all animals as a list that have a location partially matching the input
    */
-  @GetMapping("/Location")
+  @GetMapping("/Location/{location}")
   public Object getAnimalByLocation(@PathVariable String location) {
     return AnimalService.getAnimalByLocation(location);
 
@@ -90,7 +90,7 @@ public class AnimalController {
    * @param String to match against habitat values
    * @return Returning any and all animals as a list that have a habitat partially matching the input
    */
-  @GetMapping("/Habitat")
+  @GetMapping("/Habitat/{habitat}")
   public Object getAnimalByHabitat(@PathVariable String habitat) {
     return AnimalService.getAnimalByHabitat(habitat);
 
@@ -102,7 +102,7 @@ public class AnimalController {
    * @param String to match against species values
    * @return Returning any and all animals as a list that have a species partially matching the input
    */
-  @GetMapping("/Species")
+  @GetMapping("/Species/{species}")
   public Object getAnimalBySpecies(@PathVariable String species) {
     return AnimalService.getAnimalBySpecies(species);
 
