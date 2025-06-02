@@ -73,24 +73,48 @@ public class AnimalController {
   }
 
   /**
-   * Endpoint to get location Animals with location above a specified threshold
+   * Endpoint to get location by partial matching
    *
-   * @param location The location threshold for location Animals
-   * @return List of location Animals with location above the specified threshold
+   * @param String to match against location values
+   * @return Returning any and all animals as a list that have a location partially matching the input
    */
-  @GetMapping("/Animals/location")
-  public Object getAnimalByLocation(@RequestParam(name = "location", defaultValue = "3.0") String location) {
-    return new ResponseEntity<>(AnimalService.getAnimalByLocation(location), HttpStatus.OK);
+  @GetMapping("/Location")
+  public Object getAnimalByLocation(@PathVariable String location) {
+    return AnimalService.getAnimalByLocation(location);
 
   }
 
+  /**
+   * Endpoint to get habitat by partial matching
+   *
+   * @param String to match against habitat values
+   * @return Returning any and all animals as a list that have a habitat partially matching the input
+   */
+  @GetMapping("/Habitat")
+  public Object getAnimalByHabitat(@PathVariable String habitat) {
+    return AnimalService.getAnimalByHabitat(habitat);
+
+  }
+
+  /**
+   * Endpoint to get species by partial matching
+   *
+   * @param String to match against species values
+   * @return Returning any and all animals as a list that have a species partially matching the input
+   */
+  @GetMapping("/Species")
+  public Object getAnimalBySpecies(@PathVariable String species) {
+    return AnimalService.getAnimalBySpecies(species);
+
+  }
+  
   /**
    * Endpoint to add a new Animal
    *
    * @param Animal The Animal to add
    * @return List of all Animals
    */
-  @PostMapping("/Animals")
+  @PostMapping("/Add")
   public Object addAnimal(@RequestBody Animal Animal) {
     return AnimalService.addAnimal(Animal);
   }
@@ -102,7 +126,7 @@ public class AnimalController {
    * @param Animal The updated Animal information
    * @return The updated Animal
    */
-  @PutMapping("/Animals/{id}")
+  @PutMapping("/Update/{id}")
   public Animal updateAnimal(@PathVariable Long id, @RequestBody Animal Animal) {
     AnimalService.updateAnimal(id, Animal);
     return AnimalService.getAnimalById(id);
@@ -114,7 +138,7 @@ public class AnimalController {
    * @param id The ID of the Animal to delete
    * @return List of all Animals
    */
-  @DeleteMapping("/Animals/{id}")
+  @DeleteMapping("/Delete/{id}")
   public Object deleteAnimal(@PathVariable Long id) {
     AnimalService.deleteAnimal(id);
     return AnimalService.getAllAnimals();

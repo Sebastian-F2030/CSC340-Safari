@@ -60,9 +60,29 @@ public class AnimalService {
   }
 
   /**
-   * Fetch all Animals with a location above a threshold.
+   * Fetch all Animals with a habitat matching input
    *
-   * @param location the threshold
+   * @param String to match against habitat values
+   * @return the list of matching Animals
+   */
+  public Object getAnimalByHabitat(String habitat) {
+    return AnimalRepository.getAnimalByHabitat(habitat);
+  }
+
+    /**
+   * Fetch all Animals with a species matching input
+   *
+   * @param String to match against species values
+   * @return the list of matching Animals
+   */
+  public Object getAnimalBySpecies(String species) {
+    return AnimalRepository.getAnimalBySpecies(species);
+  }
+
+    /**
+   * Fetch all Animals with a location matching input
+   *
+   * @param String to match against location values
    * @return the list of matching Animals
    */
   public Object getAnimalByLocation(String location) {
