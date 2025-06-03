@@ -20,8 +20,10 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
     List<Animal> findByNameContaining(String name);
 
-    Animal findById(long animal_id);
+    Animal findById(long animalid);
 
     @SuppressWarnings("null")
     List<Animal> findAll();
+
+    Animal deleteById(long animalid);
 }

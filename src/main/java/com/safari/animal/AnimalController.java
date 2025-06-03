@@ -29,7 +29,7 @@ public class AnimalController {
    *
    * @return List of all Animals
    */
-  @GetMapping("/Animals")
+  @GetMapping("/Wildlife")
   public Object getAllAnimals() {
     return AnimalService.getAllAnimals();
   }
@@ -40,7 +40,7 @@ public class AnimalController {
    * @param id The ID of the Animal to retrieve
    * @return The Animal with the specified ID
    */
-  @GetMapping("/Animal/{id}")
+  @GetMapping("/Wildlife/{id}")
   public Animal getAnimalById(@PathVariable long id) {
     return AnimalService.getAnimalById(id);
   }
@@ -51,7 +51,7 @@ public class AnimalController {
    * @param name The name of the Animal to search for
    * @return List of Animals with the specified name
    */
-  @GetMapping("/Name/{name}")
+  @GetMapping("/Wildlife/Name/{name}")
   public Object getAnimalsByName(@PathVariable String name) {
     if (name != null) {
       return AnimalService.getAnimalsByName(name);
@@ -67,7 +67,7 @@ public class AnimalController {
    * @param species The species to search for
    * @return List of Animals with the specified species
    */
-  @GetMapping("/Category/{category}")
+  @GetMapping("/Wildlife/Category/{category}")
   public Object getAnimalsByCategory(@PathVariable String category){
     return AnimalService.getAnimalsByCategory(category);
   }
@@ -78,7 +78,7 @@ public class AnimalController {
    * @param String to match against location values
    * @return Returning any and all animals as a list that have a location partially matching the input
    */
-  @GetMapping("/Location/{location}")
+  @GetMapping("/Wildlife/Location/{location}")
   public Object getAnimalByLocation(@PathVariable String location) {
     return AnimalService.getAnimalByLocation(location);
 
@@ -90,7 +90,7 @@ public class AnimalController {
    * @param String to match against habitat values
    * @return Returning any and all animals as a list that have a habitat partially matching the input
    */
-  @GetMapping("/Habitat/{habitat}")
+  @GetMapping("/Wildlife/Habitat/{habitat}")
   public Object getAnimalByHabitat(@PathVariable String habitat) {
     return AnimalService.getAnimalByHabitat(habitat);
 
@@ -102,7 +102,7 @@ public class AnimalController {
    * @param String to match against species values
    * @return Returning any and all animals as a list that have a species partially matching the input
    */
-  @GetMapping("/Species/{species}")
+  @GetMapping("/Wildlife/Species/{species}")
   public Object getAnimalBySpecies(@PathVariable String species) {
     return AnimalService.getAnimalBySpecies(species);
 
@@ -114,7 +114,7 @@ public class AnimalController {
    * @param Animal The Animal to add
    * @return List of all Animals
    */
-  @PostMapping("/Add")
+  @PostMapping("/Wildlife/Add")
   public Object addAnimal(@RequestBody Animal Animal) {
     return AnimalService.addAnimal(Animal);
   }
@@ -126,7 +126,7 @@ public class AnimalController {
    * @param Animal The updated Animal information
    * @return The updated Animal
    */
-  @PutMapping("/Update/{id}")
+  @PutMapping("/Wildlife/Update/{id}")
   public Animal updateAnimal(@PathVariable Long id, @RequestBody Animal Animal) {
     AnimalService.updateAnimal(id, Animal);
     return AnimalService.getAnimalById(id);
@@ -138,7 +138,7 @@ public class AnimalController {
    * @param id The ID of the Animal to delete
    * @return List of all Animals
    */
-  @DeleteMapping("/Delete/{id}")
+  @DeleteMapping("/Wildlife/Delete/{id}")
   public Object deleteAnimal(@PathVariable Long id) {
     AnimalService.deleteAnimal(id);
     return AnimalService.getAllAnimals();
@@ -150,7 +150,7 @@ public class AnimalController {
    * @param Animal The Animal to write
    * @return An empty string indicating success
    */
-  @PostMapping("/Animals/writeFile")
+  @PostMapping("/Wildlife/writeFile")
   public Object writeJson(@RequestBody Animal Animal) {
     AnimalService.writeJson(Animal);
     return AnimalService.writeJson(Animal);
@@ -161,7 +161,7 @@ public class AnimalController {
    *
    * @return The contents of the JSON file
    */
-  @GetMapping("/Animals/readFile")
+  @GetMapping("/Wildlife/readFile")
   public Object readJson() {
     return AnimalService.readJson();
 

@@ -104,8 +104,16 @@ public class AnimalService {
    * @param AnimalId The ID of the Animal to update
    * @param Animal   The updated Animal information
    */
-  public Animal updateAnimal(Long AnimalId, Animal Animal) {
-    return AnimalRepository.save(Animal);
+  
+  public Object updateAnimal(Long Animalid, Animal newAnimal) {
+    return AnimalRepository.findById(Animalid).map(Animal -> {
+        Animal.setName(newAnimal.getName());
+        Animal.setDescription(newAnimal.getDescription());
+        Animal.setSpecies(newAnimal.getSpecies());
+        Animal.setLocation(newAnimal.getLocation());
+        Animal.setHabitat(newAnimal.getHabitat());
+        return AnimalRepository.save(Animal);
+      });
   }
 
   /**
@@ -113,8 +121,8 @@ public class AnimalService {
    *
    * @param AnimalId The ID of the Animal to delete
    */
-  public void deleteAnimal(Long AnimalId) {
-    AnimalRepository.deleteById(AnimalId);
+  public void deleteAnimal(Long animalid) {
+    AnimalRepository.deleteById(animalid);
   }
 
   /**
