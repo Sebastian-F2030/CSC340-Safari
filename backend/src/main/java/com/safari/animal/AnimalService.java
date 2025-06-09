@@ -107,11 +107,13 @@ public class AnimalService {
   
   public Object updateAnimal(Long Animalid, Animal newAnimal) {
     return AnimalRepository.findById(Animalid).map(Animal -> {
-        Animal.setName(newAnimal.getName());
-        Animal.setDescription(newAnimal.getDescription());
-        Animal.setSpecies(newAnimal.getSpecies());
-        Animal.setLocation(newAnimal.getLocation());
-        Animal.setHabitat(newAnimal.getHabitat());
+        Animal.setname(newAnimal.getname());
+        Animal.setshortdesc(newAnimal.getshortdesc());
+        Animal.setdescription(newAnimal.getdescription());
+        Animal.setspecies(newAnimal.getspecies());
+        Animal.setlocation(newAnimal.getlocation());
+        Animal.sethabitat(newAnimal.gethabitat());
+        Animal.setimagefile(newAnimal.getimagefile());
         return AnimalRepository.save(Animal);
       });
   }

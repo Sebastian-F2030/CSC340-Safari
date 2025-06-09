@@ -2,6 +2,7 @@ package com.safari.animal;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class AnimalController {
    *
    * @return List of all Animals
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife")
   public Object getAllAnimals() {
     return AnimalService.getAllAnimals();
@@ -37,6 +39,7 @@ public class AnimalController {
    * @param id The ID of the Animal to retrieve
    * @return The Animal with the specified ID
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/{id}")
   public Animal getAnimalById(@PathVariable long id) {
     return AnimalService.getAnimalById(id);
@@ -48,6 +51,7 @@ public class AnimalController {
    * @param name The name of the Animal to search for
    * @return List of Animals with the specified name
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/Name/{name}")
   public Object getAnimalsByName(@PathVariable String name) {
     if (name != null) {
@@ -64,6 +68,7 @@ public class AnimalController {
    * @param species The species to search for
    * @return List of Animals with the specified species
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/Category/{category}")
   public Object getAnimalsByCategory(@PathVariable String category){
     return AnimalService.getAnimalsByCategory(category);
@@ -75,6 +80,7 @@ public class AnimalController {
    * @param String to match against location values
    * @return Returning any and all animals as a list that have a location partially matching the input
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/Location/{location}")
   public Object getAnimalByLocation(@PathVariable String location) {
     return AnimalService.getAnimalByLocation(location);
@@ -87,6 +93,7 @@ public class AnimalController {
    * @param String to match against habitat values
    * @return Returning any and all animals as a list that have a habitat partially matching the input
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/Habitat/{habitat}")
   public Object getAnimalByHabitat(@PathVariable String habitat) {
     return AnimalService.getAnimalByHabitat(habitat);
@@ -99,6 +106,7 @@ public class AnimalController {
    * @param String to match against species values
    * @return Returning any and all animals as a list that have a species partially matching the input
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/Species/{species}")
   public Object getAnimalBySpecies(@PathVariable String species) {
     return AnimalService.getAnimalBySpecies(species);
@@ -111,6 +119,7 @@ public class AnimalController {
    * @param Animal The Animal to add
    * @return List of all Animals
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @PostMapping("/Wildlife/Add")
   public Object addAnimal(@RequestBody Animal Animal) {
     return AnimalService.addAnimal(Animal);
@@ -123,6 +132,7 @@ public class AnimalController {
    * @param Animal The updated Animal information
    * @return The updated Animal
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @PutMapping("/Wildlife/Update/{id}")
   public Animal updateAnimal(@PathVariable Long id, @RequestBody Animal Animal) {
     AnimalService.updateAnimal(id, Animal);
@@ -135,6 +145,7 @@ public class AnimalController {
    * @param id The ID of the Animal to delete
    * @return List of all Animals
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @DeleteMapping("/Wildlife/Delete/{id}")
   public Object deleteAnimal(@PathVariable Long id) {
     AnimalService.deleteAnimal(id);
@@ -147,6 +158,7 @@ public class AnimalController {
    * @param Animal The Animal to write
    * @return An empty string indicating success
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @PostMapping("/Wildlife/writeFile")
   public Object writeJson(@RequestBody Animal Animal) {
     AnimalService.writeJson(Animal);
@@ -158,6 +170,7 @@ public class AnimalController {
    *
    * @return The contents of the JSON file
    */
+  @CrossOrigin(origins = "http://localhost:3000")
   @GetMapping("/Wildlife/readFile")
   public Object readJson() {
     return AnimalService.readJson();
