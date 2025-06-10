@@ -32,10 +32,10 @@ export default function Inventory() {
             <ul id="animallist">
                 {data.map((animal) => (
                 <li class="col">
-                    <img src={imageUrl.concat(animal.imagefile)} width="320" height="240" alt="animal close up" /><br/>
-	                <span> {animal.shortdesc} </span><br />
-                    <span><a href= {animalUrl.concat(animal.animalid)}>
-                    <button type="button" class="btn btn-success">{animal.species}</button></a></span><br/>
+                    <img src={imageUrl.concat(animal.imagefile)} width="300" height="180" alt="animal close up" />
+	                
+                    <div class="underdata"><a href= {animalUrl.concat(animal.animalid)}>
+                    <button type="button" class="btn btn-success">{animal.species}</button></a></div>
                 </li>    
                 ))}
             </ul>
