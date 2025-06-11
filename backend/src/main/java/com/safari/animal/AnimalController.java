@@ -134,9 +134,9 @@ public class AnimalController {
    */
   @CrossOrigin(origins = "http://localhost:3000")
   @PutMapping("/Wildlife/Update/{id}")
-  public void updateAnimal(@PathVariable Long id, @RequestBody Animal Animal) {
+  public Object updateAnimal(@PathVariable Long id, @RequestBody Animal Animal) {
     AnimalService.updateAnimal(id, Animal);
-    return; /* AnimalService.getAnimalById(id); */
+    return AnimalService.getAnimalById(id);
   }
 
   /**
@@ -147,9 +147,9 @@ public class AnimalController {
    */
   @CrossOrigin(origins = "http://localhost:3000")
   @DeleteMapping("/Wildlife/Delete/{id}")
-  public void deleteAnimal(@PathVariable Long id) {
+  public Object deleteAnimal(@PathVariable Long id) {
     AnimalService.deleteAnimal(id);
-    return;
+    return AnimalService.getAllAnimals();
   }
 
   /**

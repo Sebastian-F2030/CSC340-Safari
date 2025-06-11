@@ -22,51 +22,48 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 if (request === 'animal' ) {
   root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <Animal animalid={animalid}/>
-  </React.StrictMode>
+  </>
   );
 } else if (request === "about") {
   root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <About />
-  </React.StrictMode>
+  </>
   );
 } else if (request === 'inventory') {
   root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <Inventory />
-  </React.StrictMode>
+  </>
   );
 } else if (request === 'search') {
   root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <Search />
-  </React.StrictMode>
+  </>
   );
 } else if (request === 'maintain') {
   root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <Maintain animalid={animalid}/>
-  </React.StrictMode>
+  </>
   );
 } else if (request === 'delete') {
   root.render(
-  <React.StrictMode>
-    <Pageheader />
     <Delete animalid={animalid}/>
-  </React.StrictMode>
   );
 } else {
   root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <Inventory />
-  </React.StrictMode>
+  </>
   );
 }

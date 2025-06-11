@@ -1,31 +1,40 @@
-.btn {margin: 10px 0 10px 0;}
+.btn {margin: 10px 0 10px 0; font-size: 20px;}
 #centered {margin: 30px auto; width:85%;}
-#menulinks {width:740px;float:right;padding-top:15px;}
+#menulinks {width:540px;float:right;padding-top:15px;}
 #menulist{display:inline;}
 #pageheader{padding:8px 10px 8px 20px;}
 .sitetitle{font-size:60px;}
 .longdesc {margin: 20px 0; width: 800px;}
-.detailtitle {font-size:40px; margin-bottom:20px;}
+.detailtitle {font-size:40px; margin:0px 0px 20px 10px;}
 .nav-item {display:inline; margin-right:10px;}
 .col{display:inline; width:360px; }
 #animallist {padding:0;margin:0; list-style-type: none;}
-li.col {   float: left; width: 260px; margin: 10px 0px 10px 0px; }
+li.col {   float: left; width: 270px; margin: 10px 0px 10px 0px; }
 .info{padding:10px 0px 10px 0px; font-size:22px;}
 .underdata { margin: 5px 0px 5px 60px; }
 img {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
-  width: 80%;
+  margin: 0px 10px;
   background-color: white;
 }
-
+img.thumbnail {
+  width:240px;
+  height: 180px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
 .nav-link{padding:0.5rem 1rem;
   font-size:20px;font-weight:bold;
   color:black;text-decoration:none;background:0 0;border:0;
   transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
   list-style:none}
-
+.maint-link-1 {padding:0.5rem 0; font-size:20px;font-weight:bold; color:black;text-decoration:none; margin-top: 20px;}
+.maint-link-2 {padding:0.5rem 0; font-size:20px;font-weight:bold; color:black;text-decoration:none; margin-top: 20px;}
 body {
   background-image:url("../public/images/SafariGrass.jpg");
   margin: 0;
@@ -40,3 +49,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.leftcolumn{width:120px;margin-left: 5%;}
+.middlecolumn{width:300px;}
+.rightcolumn{width:200px;margin-right: 5%;}
+.heading{text-align: left;}
+.inputshort{width:300px;}
+.inputdescription{width:300px; height:60px; word-wrap: normal;}
+form#myform table tr td{vertical-align: top; overflow: hidden;}
+.nosee{display:none;}

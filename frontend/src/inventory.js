@@ -18,24 +18,28 @@ export default function Inventory() {
                 setError(err.message);
                 setLoading(false);
             });
-    }, []);
+    });
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
     var imageUrl = "/images/";
     var animalUrl = "/animal/";
-
     return (
         <div id="centered" >
             <div class="detailtitle">Animals You Will Encounter</div>
             <ul id="animallist">
                 {data.map((animal) => (
                 <li class="col">
-                    <img src={imageUrl.concat(animal.imagefile)} width="300" height="180" alt="animal close up" />
+                    <a href={animalUrl.concat(animal.animalid)}>
+                    <img class="thumbnail" src={imageUrl.concat((animal.imagefile !== null) ? animal.imagefile : 'noimage.jpg')} width="240" height="180" 
+                        onerror="this.onerror=null; this.src='images/noimage.jpg'" alt="Safari animal" /></a>
 	                
-                    <div class="underdata"><a href= {animalUrl.concat(animal.animalid)}>
-                    <button type="button" class="btn btn-success">{animal.species}</button></a></div>
+                    <div class="underdata">
+                        <a href={animalUrl.concat(animal.animalid)}>
+                        <button type="button" class="btn">{(animal.species!== '') ? animal.species : 'Unknown Species'}</button>
+                        </a>
+                    </div>
                 </li>    
                 ))}
             </ul>

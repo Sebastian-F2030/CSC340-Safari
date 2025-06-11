@@ -27,13 +27,11 @@ export default function Delete({animalid}){
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
 
-    alert("Animal has been deleted!")
-
 
 return(root.render(
-  <React.StrictMode>
+  <>
     <Pageheader />
     <Inventory />
-  </React.StrictMode>
+  </>
   ));
 }

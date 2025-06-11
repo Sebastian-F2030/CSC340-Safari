@@ -17,9 +17,7 @@ public class Animal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty("animalid")
     private Long animalid;
-    private String name;
-    @JsonProperty("shortdesc")
-    private String shortdesc;
+    private String petname;
     @Column(columnDefinition = "text")
     private String description;
     private String species;
@@ -31,11 +29,10 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(Long animalid, String name,String shortdesc, String description, String species,
+    public Animal(Long animalid, String petname, String description, String species,
         String location, String habitat, String imagefile) {
         this.animalid = animalid;
-        this.name = name;
-        this.shortdesc = shortdesc;
+        this.petname = petname;
         this.description = description;
         this.species = species;
         this.location = location;
@@ -43,10 +40,9 @@ public class Animal {
         this.imagefile = imagefile;
     }
 
-    public Animal( String name,String shortdesc, String description, String species,
+    public Animal( String petname, String description, String species,
         String location, String habitat, String imagefile) {
-        this.name = name;
-        this.shortdesc = shortdesc;
+        this.petname = petname;
         this.description = description;
         this.species = species;
         this.location = location;
@@ -62,20 +58,12 @@ public class Animal {
         this.animalid = id;
     }
 
-    public String getname() {
-        return name;
+    public String getpetname() {
+        return petname;
     }
 
-    public void setname(String name) {
-        this.name = name;
-    }
-
-    public String getshortdesc() {
-        return shortdesc;
-    }
-
-    public void setshortdesc(String shortdesc) {
-        this.shortdesc = shortdesc;
+    public void setpetname(String petname) {
+        this.petname = petname;
     }
 
     public String getdescription() {
