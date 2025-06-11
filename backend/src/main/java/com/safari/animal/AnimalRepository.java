@@ -18,12 +18,13 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
     @Query(value = "select * from animal s where s.species = ?1 or s.location = ?1 or s.habitat = ?1", nativeQuery = true)
     List<Animal> getAnimalsByCategory(String category);
 
-    List<Animal> findByNameContaining(String name);
+    List<Animal> findByPetnameContaining(String petname);
 
     Animal findById(long animalid);
 
     @SuppressWarnings("null")
     List<Animal> findAll();
 
+    @Query(value = "delete from animal s where s.animalid = ?1; commit;", nativeQuery = true)
     Animal deleteById(long animalid);
 }

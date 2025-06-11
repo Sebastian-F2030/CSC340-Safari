@@ -45,8 +45,8 @@ public class AnimalService {
    * @param name The name of the Animal to search for
    * @return List of Animals with the specified name
    */
-  public Object getAnimalsByName(String name) {
-    return AnimalRepository.findByNameContaining(name);
+  public Object getAnimalsByName(String petname) {
+    return AnimalRepository.findByPetnameContaining(petname);
   }
 
   /**
@@ -107,12 +107,14 @@ public class AnimalService {
   
   public Object updateAnimal(Long Animalid, Animal newAnimal) {
     return AnimalRepository.findById(Animalid).map(Animal -> {
-        Animal.setName(newAnimal.getName());
-        Animal.setDescription(newAnimal.getDescription());
-        Animal.setSpecies(newAnimal.getSpecies());
-        Animal.setLocation(newAnimal.getLocation());
-        Animal.setHabitat(newAnimal.getHabitat());
-        return AnimalRepository.save(Animal);
+        Animal.setpetname(newAnimal.getpetname());
+        Animal.setdescription(newAnimal.getdescription());
+        Animal.setspecies(newAnimal.getspecies());
+        Animal.setlocation(newAnimal.getlocation());
+        Animal.sethabitat(newAnimal.gethabitat());
+        Animal.setimagefile(newAnimal.getimagefile());
+        AnimalRepository.save(Animal);
+        return AnimalRepository.findById(Animalid);
       });
   }
 
